@@ -1,0 +1,16 @@
+{
+  "name": "blossom-bytes",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Sitio web de Blossom Bytes — soluciones digitales, ecommerce, desarrollo web y marketing.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.16.18"
+  }
+}

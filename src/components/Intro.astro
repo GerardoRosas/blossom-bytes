@@ -1,0 +1,39 @@
+---
+// Bloque de transición: botón + gran titular "¿Listo para transformar...?"
+---
+
+<section class="intro section">
+  <div class="container intro__inner">
+    <a href="#contacto" class="btn">Empieza ahora</a>
+
+    <p class="eyebrow intro__eyebrow">¿Listo para transformar tu presencia digital?</p>
+
+    <h2 class="intro__title" id="servicios">Servicios</h2>
+    <div class="divider"></div>
+  </div>
+</section>
+
+<style>
+  .intro__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .intro__eyebrow {
+    font-size: clamp(0.9rem, 2.5vw, 1.35rem);
+    color: var(--color-text);
+    max-width: 40ch;
+  }
+
+  .intro__title {
+    font-family: var(--font-display);
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-size: clamp(3rem, 10vw, 7rem);
+    line-height: 1;
+  }
+</style>

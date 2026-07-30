@@ -1,0 +1,56 @@
+---
+// Hero con degradado y textura de grano, replicando el diseño original.
+---
+
+<section class="hero" id="top">
+  <div class="hero__grain" aria-hidden="true"></div>
+
+  <div class="container hero__inner">
+    <h1 class="hero__title">
+      <span>Blossom</span>
+      <span>Bytes</span>
+    </h1>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+      radial-gradient(120% 90% at 70% 15%, var(--hero-1) 0%, transparent 45%),
+      radial-gradient(130% 100% at 30% 25%, var(--hero-2) 0%, transparent 50%),
+      radial-gradient(140% 120% at 55% 75%, var(--hero-3) 0%, transparent 55%),
+      linear-gradient(160deg, #1a0d08 0%, var(--hero-4) 60%, #000 100%);
+  }
+
+  /* Textura de grano (SVG feTurbulence embebido como data-uri) */
+  .hero__grain {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+
+  .hero__inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 0.92;
+    font-size: clamp(4rem, 16vw, 12rem);
+    text-shadow: 0 8px 40px rgba(0, 0, 0, 0.40);
+  }
+
+  .hero__title span {
+    display: block;
+  }
+</style>

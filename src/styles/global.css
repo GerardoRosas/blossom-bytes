@@ -1,0 +1,166 @@
+/* ============================================================
+   Blossom Bytes — estilos globales / design tokens
+   ============================================================ */
+
+:root {
+  /* Paleta */
+  --color-bg: #000000;
+  --color-bg-alt: #0a0c10;
+  --color-surface: #0d1117;
+  --color-text: #ffffff;
+  --color-muted: rgba(255, 255, 255, 0.82);
+  --color-muted-2: rgba(255, 255, 255, 0.55);
+
+  /* Azul de marca (logo / ilustraciones) */
+  --color-accent: #4f8bc0;
+  --color-accent-light: #7ab0dd;
+  --color-accent-dark: #2f5f8a;
+
+  /* Degradado del hero */
+  --hero-1: #e8622a;
+  --hero-2: #d63f3f;
+  --hero-3: #6b3fa0;
+  --hero-4: #0a0a1a;
+
+  /* Tipografía */
+  --font-display: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-body: 'Poppins', system-ui, -apple-system, sans-serif;
+
+  /* Layout */
+  --container: 1120px;
+  --radius: 999px;
+  --section-gap: clamp(4rem, 10vw, 8rem);
+}
+
+/* ---------- reset ligero ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ---------- helpers ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 3rem);
+  text-align: center;
+}
+
+.section {
+  padding-block: var(--section-gap);
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--color-accent-light);
+}
+
+.text-accent {
+  color: var(--color-accent-light);
+}
+
+/* Botón tipo píldora contorneado (como en el diseño original) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  padding: 1rem 2.5rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--color-text);
+  color: var(--color-text);
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  transform: translateY(-2px);
+}
+
+.btn--accent {
+  border-color: var(--color-accent);
+}
+.btn--accent:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+}
+
+/* Divisor central */
+.divider {
+  height: 1px;
+  width: min(100%, 900px);
+  margin: 2.5rem auto 0;
+  background: rgba(255, 255, 255, 0.25);
+  position: relative;
+}
+.divider::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--color-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

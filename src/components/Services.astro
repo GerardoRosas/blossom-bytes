@@ -1,0 +1,119 @@
+---
+const services = [
+  {
+    title: 'Ecommerce',
+    description:
+      'Tiendas online rápidas y seguras, optimizadas para convertir visitantes en clientes.',
+    icon: 'cart',
+  },
+  {
+    title: 'Desarrollo Web',
+    description:
+      'Sitios y aplicaciones a medida con las últimas tecnologías y máximo rendimiento.',
+    icon: 'code',
+  },
+  {
+    title: 'Marketing',
+    description:
+      'Estrategias digitales que aumentan tu visibilidad y hacen crecer tu comunidad.',
+    icon: 'megaphone',
+  },
+];
+---
+
+<section class="services section">
+  <div class="container">
+    <ul class="services__grid">
+      {
+        services.map((s) => (
+          <li class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              {s.icon === 'cart' && (
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="16" y="8" width="34" height="48" rx="5" />
+                  <path d="M22 20h22M22 28h16" />
+                  <circle cx="27" cy="44" r="3" fill="currentColor" stroke="none" />
+                  <path d="M32 44h10l3-9H24" />
+                </svg>
+              )}
+              {s.icon === 'code' && (
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="8" y="12" width="48" height="34" rx="4" />
+                  <path d="M8 40h48" />
+                  <path d="M24 22l-6 5 6 5M40 22l6 5-6 5M34 20l-4 14" />
+                  <path d="M26 56h12M28 46v10M36 46v10" />
+                </svg>
+              )}
+              {s.icon === 'megaphone' && (
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 26v12a4 4 0 004 4h4l4 10h6l-4-10 22 8V16L26 26H18a4 4 0 00-4 4z" />
+                  <path d="M52 26a8 8 0 010 12" />
+                </svg>
+              )}
+            </div>
+            <h3 class="service-card__title">{s.title}</h3>
+            <p class="service-card__text">{s.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .services__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+    padding: 2.5rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent);
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(122, 176, 221, 0.4);
+    background: linear-gradient(180deg, rgba(79, 139, 192, 0.1), transparent);
+  }
+
+  .service-card__icon {
+    width: clamp(84px, 14vw, 120px);
+    height: clamp(84px, 14vw, 120px);
+    color: var(--color-accent-light);
+  }
+  .service-card__icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .service-card__title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: clamp(1.25rem, 3vw, 1.7rem);
+  }
+
+  .service-card__text {
+    color: var(--color-muted);
+    font-size: 0.98rem;
+    max-width: 28ch;
+  }
+
+  @media (max-width: 800px) {
+    .services__grid {
+      grid-template-columns: 1fr;
+      max-width: 26rem;
+      margin-inline: auto;
+    }
+  }
+</style>

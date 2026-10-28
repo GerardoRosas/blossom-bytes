@@ -8,6 +8,5 @@ export default defineConfig({
   //   site: 'https://<usuario>.github.io',
   //   base: '/blossom-bytes',
   // Para un dominio propio (blossom-bytes.com) basta con `site`:
-  site: 'https://gerardorosas.github.io/',
-  base: '/blossom-bytes'
+  site: 'https://blossom-bytes.com',
 });
